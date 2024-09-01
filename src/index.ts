@@ -8,7 +8,7 @@ dotenv.config();
 const agent = new BskyAgent({ service: 'https://bsky.social' });
 
 async function main() {
-    const dominio = 'twitter.com';
+    const dominio = 'x.com';
 
     dns.resolve(dominio, 'A', async (err, enderecos) => {
         if (err) {
@@ -19,7 +19,7 @@ async function main() {
             }
         } else {
             const ips = enderecos.join(', ');
-            await publicarStatus(`✅ X (Antigo Twitter) resolve no DNS.\n Endereços IP: [${ips}]`);
+            // await publicarStatus(`✅ X (Antigo Twitter) resolve no DNS.\n Endereços IP: [${ips}]`);
             verificarAcessoHTTPS(dominio);
         }
     });
